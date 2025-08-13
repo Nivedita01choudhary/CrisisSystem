@@ -1,0 +1,24 @@
+{
+  "name": "crisis-intervention-chatbot",
+  "version": "1.0.0",
+  "description": "AI-powered crisis intervention and support system",
+  "main": "server-azure.js",
+  "scripts": {
+    "start": "node server-azure.js",
+    "dev": "nodemon server-azure.js"
+  },
+  "keywords": ["crisis", "intervention", "chatbot", "ai", "mental-health"],
+  "author": "Crisis Support Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+} 

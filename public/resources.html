@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Resources - Crisis Intervention Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crisis-red': '#dc2626',
+                        'crisis-blue': '#2563eb',
+                        'crisis-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">🚨</div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">Crisis Intervention Support</h1>
+                        <p class="text-sm text-gray-600">24/7 AI-powered support system</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="home.html" class="text-gray-800 hover:text-crisis-red font-medium">Home</a>
+                    <a href="resources.html" class="text-crisis-red font-medium">Resources</a>
+                    <a href="index.html" class="text-gray-800 hover:text-crisis-red font-medium">Crisis Chat</a>
+                    <a href="login.html" class="bg-crisis-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">Login</a>
+                    <a href="signup.html" class="bg-crisis-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold mb-4">📚 Crisis Support Resources</h1>
+            <p class="text-xl text-green-100">
+                Comprehensive resources for mental health support, crisis intervention, and professional help
+            </p>
+        </div>
+    </div>
+
+    <!-- Emergency Resources -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-red-50 rounded-2xl border border-red-200 p-8 mb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-red-800 mb-4">🚨 Emergency Resources</h2>
+                    <p class="text-lg text-red-700">
+                        If you're in immediate crisis, these resources are available 24/7
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-3">📞</div>
+                        <h3 class="font-semibold mb-2 text-lg">988</h3>
+                        <p class="text-sm text-gray-600 mb-3">National Suicide Prevention Lifeline</p>
+                        <p class="text-xs text-gray-500">Available 24/7, free and confidential</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-3">💬</div>
+                        <h3 class="font-semibold mb-2 text-lg">741741</h3>
+                        <p class="text-sm text-gray-600 mb-3">Crisis Text Line</p>
+                        <p class="text-xs text-gray-500">Text HOME to connect with a counselor</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-3">🚨</div>
+                        <h3 class="font-semibold mb-2 text-lg">911</h3>
+                        <p class="text-sm text-gray-600 mb-3">Emergency Services</p>
+                        <p class="text-xs text-gray-500">For immediate life-threatening situations</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-3">🏠</div>
+                        <h3 class="font-semibold mb-2 text-lg">800-799-7233</h3>
+                        <p class="text-sm text-gray-600 mb-3">Domestic Violence Hotline</p>
+                        <p class="text-xs text-gray-500">Support for domestic violence situations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mental Health Resources -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">🧠 Mental Health Resources</h2>
+                <p class="text-lg text-gray-600">
+                    Professional mental health support and specialized helplines
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">🏥</span>
+                        <h3 class="font-semibold text-lg">Mental Health America</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Comprehensive mental health information and resources</p>
+                    <p class="font-semibold text-blue-800">800-273-8255</p>
+                    <a href="https://www.mhanational.org" target="_blank" class="text-blue-600 hover:underline text-sm">Visit Website</a>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">🧘</span>
+                        <h3 class="font-semibold text-lg">Anxiety & Depression Association</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Specialized support for anxiety and depression</p>
+                    <p class="font-semibold text-blue-800">800-950-6264</p>
+                    <a href="https://adaa.org" target="_blank" class="text-blue-600 hover:underline text-sm">Visit Website</a>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">👥</span>
+                        <h3 class="font-semibold text-lg">NAMI Helpline</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">National Alliance on Mental Illness support</p>
+                    <p class="font-semibold text-blue-800">800-950-6264</p>
+                    <a href="https://www.nami.org" target="_blank" class="text-blue-600 hover:underline text-sm">Visit Website</a>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">💊</span>
+                        <h3 class="font-semibold text-lg">Substance Abuse Helpline</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Support for substance abuse and addiction</p>
+                    <p class="font-semibold text-blue-800">800-662-4357</p>
+                    <a href="https://www.samhsa.gov" target="_blank" class="text-blue-600 hover:underline text-sm">Visit Website</a>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">👨‍⚕️</span>
+                        <h3 class="font-semibold text-lg">Psychology Today</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Find therapists and mental health professionals</p>
+                    <p class="font-semibold text-blue-800">Directory Service</p>
+                    <a href="https://www.psychologytoday.com" target="_blank" class="text-blue-600 hover:underline text-sm">Find Therapist</a>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl mr-3">🎓</span>
+                        <h3 class="font-semibold text-lg">University Counseling</h3>
+                    </div>
+                    <p class="text-gray-600 mb-3">Mental health services for students</p>
+                    <p class="font-semibold text-blue-800">Check Your University</p>
+                    <p class="text-sm text-gray-500">Contact your school's counseling center</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self-Help Resources -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">🌱 Self-Help Resources</h2>
+                <p class="text-lg text-gray-600">
+                    Tools, apps, and resources for self-care and mental wellness
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">📱</span>
+                        Mobile Apps
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Calm</span>
+                            <a href="https://www.calm.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Headspace</span>
+                            <a href="https://www.headspace.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">BetterHelp</span>
+                            <a href="https://www.betterhelp.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Talkspace</span>
+                            <a href="https://www.talkspace.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">7 Cups</span>
+                            <a href="https://www.7cups.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Wysa</span>
+                            <a href="https://www.wysa.io" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Sanvello</span>
+                            <a href="https://www.sanvello.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit App</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">🌐</span>
+                        Websites
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Psychology Today</span>
+                            <a href="https://www.psychologytoday.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">BetterHelp</span>
+                            <a href="https://www.betterhelp.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">7 Cups</span>
+                            <a href="https://www.7cups.com" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">GoodTherapy</span>
+                            <a href="https://www.goodtherapy.org" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">MentalHealth.gov</span>
+                            <a href="https://www.mentalhealth.gov" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">NIMH</span>
+                            <a href="https://www.nimh.nih.gov" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">HelpGuide</span>
+                            <a href="https://www.helpguide.org" target="_blank" class="text-green-600 hover:underline text-sm">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">📚</span>
+                        Books
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Anxiety and Phobia Workbook"</span>
+                            <a href="https://www.amazon.com/Anxiety-Phobia-Workbook-Edmund-Bourne/dp/157224891X" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"Feeling Good"</span>
+                            <a href="https://www.amazon.com/Feeling-Good-New-Mood-Therapy/dp/0380810336" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Mindful Way Through Depression"</span>
+                            <a href="https://www.amazon.com/Mindful-Way-Through-Depression-Liberation/dp/1593851286" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"Daring Greatly"</span>
+                            <a href="https://www.amazon.com/Daring-Greatly-Courage-Vulnerable-Transforms/dp/1592408419" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Body Keeps the Score"</span>
+                            <a href="https://www.amazon.com/Body-Keeps-Score-Healing-Trauma/dp/0143127748" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"Self-Compassion"</span>
+                            <a href="https://www.amazon.com/Self-Compassion-Kind-Yourself-Needed-Confidence/dp/1607740629" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Gifts of Imperfection"</span>
+                            <a href="https://www.amazon.com/Gifts-Imperfection-Think-Supposed-Embrace/dp/159285849X" target="_blank" class="text-green-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">🎧</span>
+                        Podcasts
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Happiness Lab"</span>
+                            <a href="https://www.happinesslab.fm" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"Mental Illness Happy Hour"</span>
+                            <a href="https://mentalpod.com" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Hilarious World of Depression"</span>
+                            <a href="https://www.hilariousworld.org" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"Terrible, Thanks for Asking"</span>
+                            <a href="https://www.ttfa.org" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Anxiety Coaches"</span>
+                            <a href="https://theanxietycoaches.com" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Calm Collective"</span>
+                            <a href="https://www.calmcollective.com" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">"The Self Love Fix"</span>
+                            <a href="https://www.theselflovefix.com" target="_blank" class="text-green-600 hover:underline text-sm">Listen Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coping Strategies -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-purple-800 mb-4">🛠️ Coping Strategies</h2>
+                <p class="text-lg text-gray-600">
+                    Practical techniques to help manage stress, anxiety, and difficult emotions
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">🫁</div>
+                    <h3 class="font-semibold mb-2">Deep Breathing</h3>
+                    <p class="text-sm text-gray-600">4-7-8 breathing technique for immediate calm</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">🚶</div>
+                    <h3 class="font-semibold mb-2">Take a Walk</h3>
+                    <p class="text-sm text-gray-600">Physical activity to reduce stress hormones</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">📝</div>
+                    <h3 class="font-semibold mb-2">Journaling</h3>
+                    <p class="text-sm text-gray-600">Write down thoughts and feelings</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">🎵</div>
+                    <h3 class="font-semibold mb-2">Music Therapy</h3>
+                    <p class="text-sm text-gray-600">Listen to calming or uplifting music</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">☎️</div>
+                    <h3 class="font-semibold mb-2">Call Someone</h3>
+                    <p class="text-sm text-gray-600">Reach out to friends or family</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">🧘</div>
+                    <h3 class="font-semibold mb-2">Mindfulness</h3>
+                    <p class="text-sm text-gray-600">Present moment awareness practice</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">💧</div>
+                    <h3 class="font-semibold mb-2">Stay Hydrated</h3>
+                    <p class="text-sm text-gray-600">Drink water and maintain nutrition</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">😴</div>
+                    <h3 class="font-semibold mb-2">Get Sleep</h3>
+                    <p class="text-sm text-gray-600">Prioritize rest and recovery</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-xl p-6 border border-purple-200 text-center">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h3 class="font-semibold mb-2">Creative Expression</h3>
+                    <p class="text-sm text-gray-600">Art, music, or other creative outlets</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professional Help -->
+    <div class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-orange-800 mb-4">👨‍⚕️ Professional Help</h2>
+                <p class="text-lg text-gray-600">
+                    How to find and access professional mental health support
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">🔍</span>
+                        Finding a Therapist
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Psychology Today</span>
+                            <a href="https://www.psychologytoday.com/us/therapists" target="_blank" class="text-orange-600 hover:underline text-sm">Find Therapist</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">BetterHelp</span>
+                            <a href="https://www.betterhelp.com" target="_blank" class="text-orange-600 hover:underline text-sm">Start Therapy</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">GoodTherapy</span>
+                            <a href="https://www.goodtherapy.org/find-therapist.html" target="_blank" class="text-orange-600 hover:underline text-sm">Find Therapist</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Zocdoc</span>
+                            <a href="https://www.zocdoc.com/psychiatrists" target="_blank" class="text-orange-600 hover:underline text-sm">Find Provider</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Talkspace</span>
+                            <a href="https://www.talkspace.com" target="_blank" class="text-orange-600 hover:underline text-sm">Online Therapy</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">TherapyDen</span>
+                            <a href="https://www.therapyden.com" target="_blank" class="text-orange-600 hover:underline text-sm">Find Therapist</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">🏥</span>
+                        Local Resources
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">SAMHSA Treatment Locator</span>
+                            <a href="https://findtreatment.samhsa.gov" target="_blank" class="text-orange-600 hover:underline text-sm">Find Treatment</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">NAMI Local Chapters</span>
+                            <a href="https://www.nami.org/Support-Education/Support-Groups/NAMI-Connection" target="_blank" class="text-orange-600 hover:underline text-sm">Find Chapter</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">MentalHealth.gov</span>
+                            <a href="https://www.mentalhealth.gov/get-help" target="_blank" class="text-orange-600 hover:underline text-sm">Get Help</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">211 Information</span>
+                            <a href="https://211.org" target="_blank" class="text-orange-600 hover:underline text-sm">Find Services</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">County Health Services</span>
+                            <a href="https://www.naccho.org/membership/lhd-directory" target="_blank" class="text-orange-600 hover:underline text-sm">Find Local</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Sliding Scale Therapy</span>
+                            <a href="https://www.opencounseling.com" target="_blank" class="text-orange-600 hover:underline text-sm">Find Affordable</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">💼</span>
+                        Workplace Support
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">EAP Directory</span>
+                            <a href="https://www.eapassn.org" target="_blank" class="text-orange-600 hover:underline text-sm">Find EAP</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Mental Health America</span>
+                            <a href="https://www.mhanational.org/workplace" target="_blank" class="text-orange-600 hover:underline text-sm">Workplace Resources</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Workplace Wellness</span>
+                            <a href="https://www.cdc.gov/workplacehealthpromotion/index.html" target="_blank" class="text-orange-600 hover:underline text-sm">CDC Resources</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Stress Management</span>
+                            <a href="https://www.mindtools.com/pages/main/newMN_TCS.htm" target="_blank" class="text-orange-600 hover:underline text-sm">Learn More</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Work-Life Balance</span>
+                            <a href="https://www.helpguide.org/articles/mental-health/work-life-balance.htm" target="_blank" class="text-orange-600 hover:underline text-sm">Get Tips</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Burnout Prevention</span>
+                            <a href="https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/burnout/art-20046642" target="_blank" class="text-orange-600 hover:underline text-sm">Prevent Burnout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                    <h3 class="font-semibold text-lg mb-4 flex items-center">
+                        <span class="text-2xl mr-3">🎓</span>
+                        Educational Resources
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Active Minds</span>
+                            <a href="https://www.activeminds.org" target="_blank" class="text-orange-600 hover:underline text-sm">Student Mental Health</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">JED Foundation</span>
+                            <a href="https://jedfoundation.org" target="_blank" class="text-orange-600 hover:underline text-sm">Student Support</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Mental Health America</span>
+                            <a href="https://www.mhanational.org/back-school" target="_blank" class="text-orange-600 hover:underline text-sm">Back to School</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">School Psychology</span>
+                            <a href="https://www.nasponline.org" target="_blank" class="text-orange-600 hover:underline text-sm">Professional Resources</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Student Mental Health</span>
+                            <a href="https://www.mentalhealth.gov/students-and-young-adults" target="_blank" class="text-orange-600 hover:underline text-sm">Government Resources</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium">Crisis Text Line</span>
+                            <a href="https://www.crisistextline.org/for-you/students" target="_blank" class="text-orange-600 hover:underline text-sm">Student Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Need Immediate Support?</h2>
+            <p class="text-xl mb-8 text-blue-100">
+                Our AI-powered crisis intervention system is available 24/7 for immediate support
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors text-lg">
+                    🚨 Start Crisis Chat
+                </a>
+                <a href="home.html" class="border-2 border-white text-white px-8 py-3 rounded-xl font-semibold hover:bg-white hover:text-blue-600 transition-colors text-lg">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl mb-4">🚨</div>
+                    <h3 class="font-semibold mb-2">Crisis Intervention</h3>
+                    <p class="text-gray-400 text-sm">
+                        24/7 AI-powered crisis intervention and support system
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="home.html" class="hover:text-white">Home</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                        <li><a href="index.html" class="hover:text-white">Crisis Chat</a></li>
+                        <li><a href="login.html" class="hover:text-white">Login</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Emergency</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Suicide Prevention: 988</li>
+                        <li>Crisis Text Line: 741741</li>
+                        <li>Emergency Services: 911</li>
+                        <li>Domestic Violence: 800-799-7233</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="resources.html" class="hover:text-white">Mental Health Resources</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Self-Help Tools</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Professional Help</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Coping Strategies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Crisis Intervention Support. This is not a replacement for professional medical care.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

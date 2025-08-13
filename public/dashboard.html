@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Crisis Intervention Support</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="auth.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crisis-red': '#dc2626',
+                        'crisis-blue': '#2563eb',
+                        'crisis-green': '#059669'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">🚨</div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">Crisis Intervention Support</h1>
+                        <p class="text-sm text-gray-600">Dashboard</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="home.html" class="text-gray-800 hover:text-crisis-red font-medium">Home</a>
+                    <a href="resources.html" class="text-gray-800 hover:text-crisis-red font-medium" onclick="return auth.requireAuth()">Resources</a>
+                    <a href="chat" class="text-gray-800 hover:text-crisis-red font-medium" onclick="return auth.requireAuth()">Crisis Chat</a>
+                    
+                    <!-- Auth buttons - shown when not logged in -->
+                    <div class="auth-buttons flex items-center space-x-4">
+                        <a href="login.html" class="bg-crisis-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">Login</a>
+                        <a href="signup.html" class="bg-crisis-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Sign Up</a>
+                    </div>
+                    
+                    <!-- User info - shown when logged in -->
+                    <div class="user-info hidden">
+                        <span class="text-gray-700 mr-4">Welcome, User</span>
+                        <button onclick="auth.logout()" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Welcome Section -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 id="welcomeTitle" class="text-2xl font-bold text-gray-800">Welcome back, User!</h1>
+                    <p id="welcomeSubtitle" class="text-gray-600">You're not alone. We're here to support you 24/7.</p>
+                </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-600">Last login</p>
+                    <p class="text-sm font-medium text-gray-800">Today, 2:30 PM</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center mb-4">
+                    <div class="text-3xl mr-3">💬</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Crisis Chat</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Connect with our AI support system for immediate help and guidance.</p>
+                <a href="chat" class="inline-block bg-crisis-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors" onclick="return auth.requireAuth()">Start Chat</a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center mb-4">
+                    <div class="text-3xl mr-3">📚</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Resources</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Access crisis resources, hotlines, and self-help materials.</p>
+                <a href="resources.html" class="inline-block bg-crisis-green text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors" onclick="return auth.requireAuth()">Browse Resources</a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center mb-4">
+                    <div class="text-3xl mr-3">📊</div>
+                    <h3 class="text-lg font-semibold text-gray-800">Progress</h3>
+                </div>
+                <p class="text-gray-600 mb-4">Track your wellness journey and view your progress over time.</p>
+                <button onclick="viewSessions()" class="inline-block bg-crisis-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Sessions</button>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">📅</div>
+                    <div>
+                        <p class="text-sm text-gray-600">Sessions This Week</p>
+                        <p class="text-2xl font-bold text-gray-800">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">⏱️</div>
+                    <div>
+                        <p class="text-sm text-gray-600">Total Time</p>
+                        <p class="text-2xl font-bold text-gray-800">2h 30m</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">📈</div>
+                    <div>
+                        <p class="text-sm text-gray-600">Mood Trend</p>
+                        <p class="text-2xl font-bold text-green-600">Improving</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="text-2xl mr-3">🎯</div>
+                    <div>
+                        <p class="text-sm text-gray-600">Goals Met</p>
+                        <p class="text-2xl font-bold text-blue-600">3/5</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Recent Activity</h2>
+            <div class="space-y-4">
+                <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                    <div class="text-2xl mr-4">💬</div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">Crisis Chat Session</p>
+                        <p class="text-sm text-gray-600">30 minutes ago - 15 minutes duration</p>
+                    </div>
+                    <span class="text-sm text-green-600">Completed</span>
+                </div>
+
+                <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                    <div class="text-2xl mr-4">📚</div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">Resource Accessed</p>
+                        <p class="text-sm text-gray-600">2 hours ago - Coping Strategies</p>
+                    </div>
+                    <span class="text-sm text-blue-600">Viewed</span>
+                </div>
+
+                <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                    <div class="text-2xl mr-4">🎯</div>
+                    <div class="flex-1">
+                        <p class="font-medium text-gray-800">Goal Completed</p>
+                        <p class="text-sm text-gray-600">Yesterday - Daily Check-in</p>
+                    </div>
+                    <span class="text-sm text-green-600">Achieved</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!auth.isLoggedIn) {
+                // Update welcome message for non-logged in users
+                document.getElementById('welcomeTitle').textContent = 'Welcome to Crisis Intervention Support';
+                document.getElementById('welcomeSubtitle').textContent = 'Please login to access all features and track your progress.';
+            } else {
+                // Update welcome message for logged in users
+                document.getElementById('welcomeTitle').textContent = `Welcome back, ${auth.user.name}!`;
+                document.getElementById('welcomeSubtitle').textContent = 'You\'re not alone. We\'re here to support you 24/7.';
+            }
+        });
+
+        function viewSessions() {
+            if (!auth.isLoggedIn) {
+                alert('Please login to view your sessions.');
+                window.location.href = 'login.html';
+                return;
+            }
+            alert('Sessions feature coming soon!');
+        }
+    </script>
+</body>
+</html> 
