@@ -100,30 +100,26 @@ class IntelligentResponseService {
     // Extract key themes from the message
     const themes = this.extractThemes(lowerMessage);
     
-    // Base response structure
+    // Generate response based on crisis level and themes
     let response = '';
     
     if (crisisLevel.level === 'critical') {
-      response = this.generateCriticalResponse(message, context);
+      response = "I'm very concerned about what you're sharing. Your safety is the most important thing right now. Please know that you're not alone and there are people who want to help you. Can you tell me more about what's happening? If you're in immediate danger, please call 988 or 911 right now.";
     } else if (crisisLevel.level === 'high') {
-      response = this.generateHighCrisisResponse(message, context, messageCount);
+      response = "I can hear that you're going through a really difficult time. It sounds like you're feeling overwhelmed and in a lot of pain. You don't have to go through this alone. What would be most helpful for you right now?";
     } else if (crisisLevel.level === 'medium') {
-      response = this.generateMediumCrisisResponse(message, context, messageCount);
+      response = "I can sense that you're dealing with some challenging feelings. It's completely normal to feel this way when things are difficult. What's been the hardest part for you lately?";
     } else {
-      response = this.generateLowCrisisResponse(message, context, messageCount);
+      response = "Thank you for sharing that with me. I'm here to listen and support you. How are you feeling right now?";
     }
     
-    // Add dynamic content based on specific themes
-    if (themes.includes('work') || themes.includes('job')) {
-      response += '\n\nWork stress can be overwhelming. What specific aspect is most challenging?';
-    } else if (themes.includes('relationship') || themes.includes('partner') || themes.includes('family')) {
-      response += '\n\nRelationship issues can be really difficult. Would you like to talk more about this?';
-    } else if (themes.includes('sleep') || themes.includes('tired') || themes.includes('exhausted')) {
-      response += '\n\nSleep issues often affect our mental health. How long has this been going on?';
-    } else if (themes.includes('lonely') || themes.includes('alone') || themes.includes('isolated')) {
-      response += '\n\nFeeling lonely can be really hard. What would help you feel more connected?';
-    } else if (themes.includes('future') || themes.includes('hopeless') || themes.includes('no point')) {
-      response += '\n\nIt sounds like you\'re struggling with hope for the future. What would make a difference?';
+    // Add personalized elements based on themes
+    if (themes.includes('loneliness')) {
+      response += ` I can hear that you're feeling lonely. That's a really painful feeling. Have you been able to connect with anyone recently?`;
+    }
+    
+    if (themes.includes('stress')) {
+      response += ` Stress can be really overwhelming. What helps you feel a little bit better when things get stressful?`;
     }
     
     return response;
@@ -131,224 +127,82 @@ class IntelligentResponseService {
 
   extractThemes(message) {
     const themes = [];
-    
-    if (message.includes('work') || message.includes('job') || message.includes('career') || message.includes('boss')) {
-      themes.push('work');
-    }
-    if (message.includes('relationship') || message.includes('partner') || message.includes('family') || message.includes('friend')) {
-      themes.push('relationship');
-    }
-    if (message.includes('sleep') || message.includes('tired') || message.includes('exhausted') || message.includes('rest')) {
-      themes.push('sleep');
-    }
-    if (message.includes('lonely') || message.includes('alone') || message.includes('isolated') || message.includes('no one')) {
-      themes.push('lonely');
-    }
-    if (message.includes('future') || message.includes('hopeless') || message.includes('no point') || message.includes('pointless')) {
-      themes.push('future');
-    }
-    if (message.includes('money') || message.includes('financial') || message.includes('bills') || message.includes('debt')) {
-      themes.push('financial');
-    }
-    if (message.includes('health') || message.includes('sick') || message.includes('pain') || message.includes('medical')) {
-      themes.push('health');
-    }
-    
+    if (message.includes('alone') || message.includes('lonely')) themes.push('loneliness');
+    if (message.includes('stress') || message.includes('overwhelmed')) themes.push('stress');
+    if (message.includes('tired') || message.includes('exhausted')) themes.push('fatigue');
+    if (message.includes('worry') || message.includes('anxious')) themes.push('anxiety');
     return themes;
   }
 
   generateDynamicFollowUps(message, crisisLevel, context) {
-    const lowerMessage = message.toLowerCase();
-    const themes = this.extractThemes(lowerMessage);
+    const followUps = [];
     
-    let followUps = [];
-    
-    // Generate follow-ups based on specific themes
-    if (themes.includes('work')) {
-      followUps.push('What\'s the most stressful part of your work situation?');
-      followUps.push('Have you talked to anyone at work about how you\'re feeling?');
-    }
-    if (themes.includes('relationship')) {
-      followUps.push('What would help improve your relationship situation?');
-      followUps.push('Have you tried talking to the person you\'re having issues with?');
-    }
-    if (themes.includes('sleep')) {
-      followUps.push('What\'s your sleep routine like?');
-      followUps.push('Have you tried any relaxation techniques before bed?');
-    }
-    if (themes.includes('lonely')) {
-      followUps.push('What activities usually help you feel less alone?');
-      followUps.push('Is there someone you could reach out to right now?');
-    }
-    if (themes.includes('future')) {
-      followUps.push('What would make you feel more hopeful about the future?');
-      followUps.push('What\'s one small thing you could do today to help yourself?');
-    }
-    if (themes.includes('financial')) {
-      followUps.push('What\'s the most pressing financial concern right now?');
-      followUps.push('Have you looked into any financial assistance programs?');
-    }
-    if (themes.includes('health')) {
-      followUps.push('How long have you been dealing with these health issues?');
-      followUps.push('Have you talked to a doctor about how this affects your mental health?');
-    }
-    
-    // Add crisis-level specific follow-ups
     if (crisisLevel.level === 'critical') {
-      followUps.unshift('Are you currently in a safe place?');
-      followUps.unshift('Do you have someone you can call right now?');
+      followUps.push('Are you safe right now?');
+      followUps.push('Do you have someone you can call?');
+      followUps.push('What would help you feel safer?');
     } else if (crisisLevel.level === 'high') {
-      followUps.unshift('How long have you been feeling this way?');
-      followUps.unshift('Have you talked to anyone about these feelings?');
-    } else if (crisisLevel.level === 'medium') {
-      followUps.unshift('What\'s been causing you to feel this way?');
-      followUps.unshift('Have you tried any coping strategies?');
+      followUps.push("What's been the hardest part of this?");
+      followUps.push("Have you talked to anyone about how you're feeling?");
+      followUps.push("What would be most helpful for you right now?");
     } else {
-      followUps.unshift('What\'s been on your mind lately?');
-      followUps.unshift('How can I best support you right now?');
+      followUps.push("How long have you been feeling this way?");
+      followUps.push("What usually helps when you're feeling down?");
+      followUps.push("Is there anything specific that's been difficult lately?");
     }
     
-    // Return unique follow-ups (max 3)
-    return followUps.filter((item, index) => followUps.indexOf(item) === index).slice(0, 3);
-  }
-
-  generateCriticalResponse(message, context) {
-    return `I'm very concerned about what you're saying. Your life has value.
-
-Please call 988 immediately - the National Suicide Prevention Lifeline is available 24/7.
-
-If you're in immediate danger, call 911 or go to the nearest emergency room.
-
-I'm here to listen, but professional help is available.`;
-  }
-
-  generateHighCrisisResponse(message, context, messageCount) {
-    if (messageCount === 1) {
-      return `I hear you're going through a difficult time. Depression and hopelessness are treatable.
-
-You don't have to go through this alone. Would you like to talk more about what's been going on?
-
-Remember, seeking help is a sign of strength.`;
-    } else {
-      return `I can see this has been hard for you. Have you considered talking to a mental health professional?
-
-What would it be like to reach out to someone you trust?
-
-Things can get better, even when it doesn't feel like it right now.`;
-    }
-  }
-
-  generateMediumCrisisResponse(message, context, messageCount) {
-    if (messageCount === 1) {
-      return `I understand you're feeling overwhelmed and stressed. These feelings are normal and manageable.
-
-What's been causing you to feel this way? I'm here to listen.
-
-Have you tried any coping strategies that worked before?`;
-    } else {
-      return `I can see this has been affecting you. Have you considered talking to a counselor?
-
-What would help you feel more grounded right now?
-
-Remember, it's okay to ask for help.`;
-    }
-  }
-
-  generateLowCrisisResponse(message, context, messageCount) {
-    if (messageCount === 1) {
-      return `I'm sorry you're not feeling your best right now. It's completely normal to have days or periods where we feel down or struggle with our emotions.
-
-Thank you for reaching out and sharing how you're feeling. That takes courage, and I'm here to listen and support you.
-
-What's been going on that's been affecting how you feel? Sometimes just talking about what's on our minds can help us process our emotions better.
-
-Is there anything specific that usually helps you feel better when you're having a tough time? Everyone has different things that work for them.`;
-    } else {
-      return `I appreciate you continuing to share with me. It sounds like you've been going through a challenging time, and I want you to know that it's okay to not be okay sometimes.
-
-How have you been coping with these feelings? Sometimes it helps to recognize the small ways we're already taking care of ourselves.
-
-What would feel supportive to you right now? I'm here to listen, and I want to help in whatever way would be most helpful for you.
-
-Remember, healing and feeling better often happens gradually, and it's okay to take things one day at a time.`;
-    }
+    return followUps;
   }
 
   generateSuggestions(crisisLevel) {
     const suggestions = {
-      low: [
-        'Practice deep breathing exercises',
-        'Take a walk outside in nature',
-        'Talk to a friend or family member',
-        'Write down your thoughts and feelings',
-        'Try some gentle stretching or yoga',
-        'Listen to calming music',
-        'Do something you usually enjoy'
-      ],
-      medium: [
-        'Consider talking to a mental health professional',
-        'Practice mindfulness or meditation',
-        'Establish a daily routine',
-        'Limit caffeine and alcohol',
-        'Get adequate sleep',
-        'Exercise regularly',
-        'Connect with supportive people'
-      ],
-      high: [
-        'Please call a crisis hotline (988)',
-        'Contact a mental health professional immediately',
-        'Reach out to a trusted friend or family member',
-        'Consider going to an emergency room if needed',
-        'Remove any means of self-harm from your environment',
-        'Stay with someone you trust',
-        'Focus on getting through the next hour'
-      ],
-      critical: [
-        'Call 988 immediately - National Suicide Prevention Lifeline',
+      'critical': [
+        'Call 988 - National Suicide Prevention Lifeline',
+        "Call 911 if you're in immediate danger",
         'Go to the nearest emergency room',
-        'Call 911 if you are in immediate danger',
-        'Text HOME to 741741 for Crisis Text Line',
-        'Stay with someone you trust',
-        'Remove any dangerous items from your environment',
-        'Remember that this feeling is temporary'
+        'Remove any means of self-harm from your environment',
+        'Stay with someone you trust'
+      ],
+      'high': [
+        'Call a crisis hotline',
+        'Talk to a trusted friend or family member',
+        'Consider speaking with a mental health professional',
+        'Practice deep breathing exercises',
+        'Remove yourself from harmful situations'
+      ],
+      'medium': [
+        'Talk to someone you trust',
+        'Practice self-care activities',
+        'Consider professional counseling',
+        'Exercise or go for a walk',
+        'Write down your thoughts and feelings'
+      ],
+      'low': [
+        'Practice mindfulness or meditation',
+        'Connect with friends or family',
+        'Engage in activities you enjoy',
+        'Get adequate sleep and nutrition',
+        'Consider talking to a counselor'
       ]
     };
     
-    return suggestions[crisisLevel] || suggestions.low;
+    return suggestions[crisisLevel] || suggestions['low'];
   }
 
   getEmergencyContacts() {
     return [
-      '988 - National Suicide Prevention Lifeline (24/7)',
-      '741741 - Crisis Text Line (Text HOME)',
+      '988 - National Suicide Prevention Lifeline',
       '911 - Emergency Services',
-      '800-273-8255 - National Suicide Prevention Lifeline (Alternative)'
+      'Crisis Text Line: Text HOME to 741741',
+      'Emergency Room - Go to nearest hospital'
     ];
   }
 
-  updateUserContext(conversationId, message, crisisLevel) {
+  updateUserContext(conversationId, message, crisisAssessment) {
     const context = this.userContext.get(conversationId) || {};
-    
-    if (!context.crisisHistory) context.crisisHistory = [];
-    context.crisisHistory.push({
-      level: crisisLevel.level,
-      timestamp: new Date(),
-      message: message
-    });
-    
-    context.crisisHistory = context.crisisHistory.slice(-5);
-    
-    const recentLevels = context.crisisHistory.map(h => h.level);
-    if (recentLevels.includes('critical')) {
-      context.overallTrend = 'escalating';
-    } else if (recentLevels.includes('high')) {
-      context.overallTrend = 'concerning';
-    } else if (recentLevels.includes('medium')) {
-      context.overallTrend = 'moderate';
-    } else {
-      context.overallTrend = 'stable';
-    }
-    
+    context.lastCrisisLevel = crisisAssessment.level;
+    context.lastMessageTime = new Date();
+    context.messageCount = (context.messageCount || 0) + 1;
     this.userContext.set(conversationId, context);
   }
 
@@ -373,8 +227,8 @@ const io = socketIo(server, {
   transports: ['websocket', 'polling']
 });
 
-// Use environment variable for port (Azure requirement)
-const PORT = process.env.PORT || 3001;
+// Use environment variable for port (Azure requirement) - FIXED PORT
+const PORT = process.env.PORT || 8080;
 
 app.use(cors({
   origin: ["http://localhost:3000", "https://cts-vibeappce4614-1.azurewebsites.net", "*"],
@@ -474,8 +328,23 @@ io.on('connection', (socket) => {
   });
 });
 
+// Start server
 server.listen(PORT, () => {
-  console.log(`🚀 Crisis Intervention Server running on port ${PORT}`);
-  console.log(`🤖 Intelligent Response System: Active`);
-  console.log(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🚀 Crisis Intervention Backend API running on port ${PORT}`);
+  console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(`🔗 API URL: http://localhost:${PORT}/api`);
+  console.log(`🏥 Health Check: http://localhost:${PORT}/health`);
+  console.log(`🔗 Socket.IO: ws://localhost:${PORT}`);
+  console.log(`🤖 AI Service: ${process.env.OPENAI_API_KEY ? 'Enabled' : 'Disabled (No API Key)'}`);
+});
+
+// Error handling
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
 }); 
